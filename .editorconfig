@@ -1,0 +1,29 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_length = 160
+tab_width = 2
+trim_trailing_whitespace = true
+
+[*.php]
+indent_size = 4
+max_line_length = 110
+tab_width = 4
+
+[{*.http,*.rest}]
+indent_size = 0
+
+[{*.markdown,*.md}]
+indent_size = 4
+tab_width = 4
+
+[{*.mk,GNUmakefile,makefile}]
+tab_width = 4
+
+[{*.tf,*.tfvars}]
+tab_width = 4

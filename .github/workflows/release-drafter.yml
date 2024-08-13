@@ -1,0 +1,10 @@
+---
+name: Release Drafter
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_call:
+
+jobs:
+  Draft:
+    uses: ivuorinen/.github/.github/workflows/sync-labels.yml@main

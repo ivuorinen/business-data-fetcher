@@ -1,0 +1,13 @@
+---
+name: PR Lint
+
+on:
+  push:
+    branches-ignore: [master, main]
+    # Remove the line above to run when pushing to master
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  SuperLinter:
+    uses: ivuorinen/.github/.github/workflows/pr-lint.yml@main
