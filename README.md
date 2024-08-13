@@ -36,3 +36,8 @@ this link: https://avoindata.prh.fi/ytj_en.html
 
 The data provided by the API is subject to change without warning and the author(s)
 of this library are providing this without compensation and cannot be held responsible.
+
+## License
+
+[MIT licensed](LICENSE.md)
+
