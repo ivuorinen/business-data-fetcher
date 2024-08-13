@@ -1,0 +1,16 @@
+{
+    "name": "ivuorinen/business-data-fetcher",
+    "description": "Library to fetch finnish business data",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8",
+        "guzzlehttp/guzzle": "7.4.5",
+        "spatie/data-transfer-object": "^3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ivuorinen\\BusinessDataFetcher\\": "src/"
+        }
+    }
+}

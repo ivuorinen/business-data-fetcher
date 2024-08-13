@@ -1,0 +1,122 @@
+BisCompanyDetails {
+    names (Array[BisCompanyName]): Primary company name and translations
+    auxiliaryNames (Array[BisCompanyName], optional): Auxiliary company name and translations
+    addresses (Array[BisAddress], optional): Company's street and postal addresses
+    companyForms (Array[BisCompanyForm], optional): Company form and translations
+    liquidations (Array[BisCompanyLiquidation], optional): Bankruptcy, liquidation or restructuring proceedings
+    businessLines (Array[BisCompanyBusinessLine], optional): Company's lines of business and translations
+    languages (Array[BisCompanyLanguage], optional): Company's language(s)
+    registeredOffices (Array[BisCompanyRegisteredOffice], optional): Company's place of registered office and its translations
+    contactDetails (Array[BisCompanyContactDetail], optional): Company's contact details and translations
+    registeredEntries (Array[BisCompanyRegisteredEntry], optional): Company's registered entries
+    businessIdChanges (Array[BisCompanyBusinessIdChange], optional): Company's Business ID changes
+    businessId (string): Business ID
+    registrationDate (string): Date of registration
+    companyForm (string, optional): Company form
+    detailsUri (string, optional): A URI for more details, if details aren't already included
+    name (string): Primary company name
+}
+
+BisCompanyName {
+    source (integer, optional): Zero for common, one for Finnish Patent and Registration Office, two for Tax Administration or three for Business Information System
+    order (integer): Zero for primary company name, other for translations of the primary company name and auxiliary company names
+    version (integer): One for current version and >1 for historical company names
+    registrationDate (string): Date of registration
+    endDate (string, optional): Ending date of registration
+    name (string): Company name
+    language (string, optional): Two letter language code
+}
+
+BisAddress {
+    source (integer, optional): Zero for common, one for Finnish Patent and Registration Office, two for Tax Administration or three for Business Information System
+    version (integer): One for current version and >1 for historical addresses
+    registrationDate (string): Date of registration
+    endDate (string, optional): Ending date of registration
+    careOf (string, optional): Care of address
+    street (string, optional): Street address
+    postCode (string, optional): ZIP code
+    city (string, optional): City of address
+    language (string, optional): Two letter language code
+    type (integer): Type of address, 1 for street address, 2 for postal address
+    country (string, optional): Two letter country code
+}
+
+BisCompanyForm {
+    source (integer, optional): Zero for common, one for Finnish Patent and Registration Office, two for Tax Administration or three for Business Information System
+    version (integer): One for current version and >1 for historical company forms
+    registrationDate (string): Date of registration
+    endDate (string, optional): Ending date of registration
+    name (string): Name of company form
+    language (string, optional): Two letter language code
+    type (string): Type of company form
+}
+
+BisCompanyLiquidation {
+    source (integer, optional): Zero for common, one for Finnish Patent and Registration Office, two for Tax Administration or three for Business Information System
+    version (integer): One for current version and >1 for historical company forms
+    registrationDate (string): Date of registration
+    endDate (string, optional): Ending date of registration
+    name (string): Bankruptcy, liquidation or restructuring proceedings
+    language (string, optional): Two letter language code
+    type (string): Type of liquidation
+}
+
+BisCompanyBusinessLine {
+    source (integer, optional): Zero for common, one for Finnish Patent and Registration Office, two for Tax Administration or three for Business Information System
+    order (integer): Zero for main line of business, positive for others
+    version (integer): One for current version and >1 for historical lines of business
+    registrationDate (string): Date of registration
+    endDate (string, optional): Ending date of registration
+    name (string): Name of line of business
+    language (string, optional): Two letter language code
+}
+
+BisCompanyLanguage {
+    source (integer, optional): Zero for common, one for Finnish Patent and Registration Office, two for Tax Administration or three for Business Information System
+    version (integer): One for current version and >1 for historical languages
+    registrationDate (string): Date of registration
+    endDate (string, optional): Ending date of registration
+    name (string): Name of language
+    language (string, optional): Two letter language code
+}
+
+BisCompanyRegisteredOffice {
+    source (integer, optional): Zero for common, one for Finnish Patent and Registration Office, two for Tax Administration or three for Business Information System
+    order (integer): Zero for primary place of registered office, positive for others
+    version (integer): One for current version and >1 for historical places of registered office
+    registrationDate (string): Date of registration
+    endDate (string, optional): Ending date of registration
+    name (string): Name of place of registered office
+    language (string, optional): Two letter language code
+}
+
+BisCompanyContactDetail {
+    source (integer, optional): Zero for common, one for Finnish Patent and Registration Office, two for Tax Administration or three for Business Information System
+    version (integer): One for current version and >1 for historical contact details
+    registrationDate (string): Date of registration
+    endDate (string, optional): Ending date of registration
+    language (string, optional): Two letter language code
+    value (string): Value of contact detail
+    type (string): Type of contact detail
+}
+
+BisCompanyRegisteredEntry {
+    description (string): Description of entry
+    status (integer): Zero for common entries, one for ‘Unregistered’ and two for ‘Registered’
+    registrationDate (string): Date of registration
+    endDate (string, optional): Ending date of registration
+    register (integer): One for Trade Register, two for Register of Foundations, three for Register of Associations, four for Tax Administration, five for Prepayment Register, six for VAT Register, seven for Employer Register and eight for register of bodies liable for tax on insurance premiums
+    language (string, optional): Two letter language code
+    authority (integer): One for Tax Administration, two for Finnish Patent and Registration Office and three for Population Register
+}
+
+BisCompanyBusinessIdChange {
+    source (integer, optional): Zero for common, one for Finnish Patent and Registration Office, two for Tax Administration or three for Business Information System
+    description (string): Description of reason
+    reason (string): Reason code
+    changeDate (string, optional): Date of Business ID change
+    change (integer): 2 = Business ID removal,3 = Combining of double IDs,5 = ID changed,44 = Fusion,45 = Operator continuing VAT activities,46 = Relation to predecessor,47 = Division,48 = Bankruptcy relationship,49 = Operations continued by a private trader,57 = Partial division,DIF = Division,FUU = Fusion
+    oldBusinessId (string): Old Business ID
+    newBusinessId (string): New Business ID
+    language (string, optional): Two letter language code
+}
