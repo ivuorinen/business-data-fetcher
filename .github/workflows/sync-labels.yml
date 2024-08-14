@@ -13,6 +13,9 @@ on:
   workflow_call:
   workflow_dispatch:
 
+permissions:
+  issues: write
+
 jobs:
   SyncLabels:
     uses: ivuorinen/.github/.github/workflows/sync-labels.yml@main
