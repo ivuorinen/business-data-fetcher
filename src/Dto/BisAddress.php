@@ -7,77 +7,58 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 /**
  * Business Address
- *
- * - careOf (string, optional): Care of address
- * - street (string, optional): Street address
- * - postCode (string, optional): ZIP code
- * - city (string, optional): City of address
- * - language (string, optional): Two letter language code
- * - type (integer): Type of address, 1 for street address, 2 for postal address
- * - country (string, optional): Two letter country code
  */
 class BisAddress extends DataTransferObject
 {
     use HasSource;
 
     /**
-     * One for current version and >1 for historical company names
-     *
-     * @var int
+     * One for current version and >1 for historical addresses
      */
     public int $version;
+
     /**
      * Date of registration
-     *
-     * @var string
      */
-    public string $registrationDate = '';
+    public string $registrationDate = "";
+
     /**
      * Ending date of registration
-     *
-     * @var string|null
      */
     public ?string $endDate = null;
+
     /**
-     * Care of address (c/o)
-     *
-     * @var string|null
+     * Care of address
      */
-    public ?string $careOf;
+    public ?string $careOf = null;
+
     /**
      * Street address
-     *
-     * @var string|null
      */
-    public ?string $street;
+    public ?string $street = null;
+
     /**
      * ZIP code
-     *
-     * @var string|null
      */
-    public ?string $postCode;
+    public ?string $postCode = null;
+
     /**
      * City of address
-     *
-     * @var string|null
      */
-    public ?string $city;
+    public ?string $city = null;
+
     /**
      * Two letter language code
-     *
-     * @var string|null
      */
-    public ?string $language;
+    public ?string $language = null;
+
     /**
      * Type of address, 1 for street address, 2 for postal address
-     *
-     * @var int
      */
     public int $type;
+
     /**
-     * Two-letter country code
-     *
-     * @var string|null
+     * Two letter country code
      */
-    public ?string $country;
+    public ?string $country = null;
 }

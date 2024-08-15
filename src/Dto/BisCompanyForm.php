@@ -14,34 +14,29 @@ class BisCompanyForm extends DataTransferObject
 
     /**
      * One for current version and >1 for historical company forms
-     *
-     * @var int
      */
     public int $version;
+
     /**
      * Date of registration
-     *
-     * @var string
      */
-    public string $registrationDate;
+    public string $registrationDate = "";
+
     /**
      * Ending date of registration
-     *
-     * @var string|null
      */
-    public ?string $endDate;
+    public ?string $endDate = null;
+
     /**
      * Name of company form
-     *
-     * @var string
      */
-    public string $name;
+    public string $name = "";
+
     /**
      * Two letter language code
-     *
-     * @var string|null
      */
-    public ?string $language;
+    public ?string $language = null;
+
     /**
      * Type of company form.
      *

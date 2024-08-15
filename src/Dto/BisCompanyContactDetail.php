@@ -14,38 +14,31 @@ class BisCompanyContactDetail extends DataTransferObject
 
     /**
      * One for current version and >1 for historical contact details
-     *
-     * @var int
      */
     public int $version;
+
     /**
      * Date of registration
-     *
-     * @var string
      */
-    public string $registrationDate;
+    public string $registrationDate = "";
+
     /**
      * Ending date of registration
-     *
-     * @var string|null
      */
-    public ?string $endDate;
+    public ?string $endDate = null;
+
     /**
      * Two letter language code
-     *
-     * @var string
      */
-    public string $language;
+    public ?string $language = null;
+
     /**
      * Value of contact detail
-     *
-     * @var string
      */
-    public string $value;
+    public string $value = "";
+
     /**
      * Type of contact detail
-     *
-     * @var string
      */
-    public string $type;
+    public string $type = "";
 }

@@ -13,33 +13,32 @@ class BisCompanyLanguage extends DataTransferObject
     use HasSource;
 
     /**
-     * One for current version and >1 for historical company names
-     *
-     * @var int
+     * One for current version and >1 for historical company forms
      */
     public int $version;
+
     /**
      * Date of registration
-     *
-     * @var string
      */
-    public string $registrationDate = '';
+    public string $registrationDate = "";
+
     /**
      * Ending date of registration
-     *
-     * @var string|null
      */
     public ?string $endDate = null;
+
     /**
-     * Company name
-     *
-     * @var string
+     * Bankruptcy, liquidation or restructuring proceedings
      */
-    public string $name;
+    public string $name = "";
+
     /**
      * Two letter language code
-     *
-     * @var string|null
      */
     public ?string $language = null;
+
+    /**
+     * Type of liquidation
+     */
+    public string $type = "";
 }
