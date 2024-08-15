@@ -2,4 +2,6 @@
 
 namespace Ivuorinen\BusinessDataFetcher\Exceptions;
 
-class ApiResponseErrorException extends \Exception {}
+class ApiResponseErrorException extends \Exception
+{
+}

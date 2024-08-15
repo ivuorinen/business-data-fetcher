@@ -12,5 +12,8 @@
         "psr-4": {
             "Ivuorinen\\BusinessDataFetcher\\": "src/"
         }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.10"
     }
 }
