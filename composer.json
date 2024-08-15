@@ -4,7 +4,7 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": "^8",
+        "php": "^8.2",
         "guzzlehttp/guzzle": "^7.4.5",
         "spatie/data-transfer-object": "^3.9"
     },
