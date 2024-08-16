@@ -14,7 +14,7 @@ jobs:
   build:
 
     # pre-installed php from 7.4 to 8.3
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
