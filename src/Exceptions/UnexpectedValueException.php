@@ -2,6 +2,8 @@
 
 namespace Ivuorinen\BusinessDataFetcher\Exceptions;
 
-class UnexpectedValueException extends \Exception
+use Exception;
+
+class UnexpectedValueException extends Exception
 {
 }

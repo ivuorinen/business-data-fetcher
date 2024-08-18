@@ -25,7 +25,7 @@
 |:-----------|:---------|
 | public | <strong>__construct()</strong> : <em>void</em><br /><em>BusinessDataFetcher constructor.</em> |
 | public | <strong>getBusinessInformation(</strong><em>\string</em> <strong>$businessId</strong>)</strong> : <em>array</em><br /><em>Fetch Business Information.</em> |
-| public | <strong>parse_response(</strong><em>\Psr\Http\Message\ResponseInterface</em> <strong>$response</strong>)</strong> : <em>array</em> |
+| public | <strong>parseResponse(</strong><em>\Psr\Http\Message\ResponseInterface</em> <strong>$response</strong>)</strong> : <em>array</em><br /><em>Parse the response from the API.</em> |
 
 
 <hr /><a id="class-ivuorinenbusinessdatafetcherdtobiscompanyname"></a>
@@ -36,6 +36,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
+| public | <strong>getLanguageString()</strong> : <em>string</em><br /><em>Get the language code as a string.</em> |
 | public | <strong>getSourceText()</strong> : <em>string</em> |
 
 
@@ -49,6 +50,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
+| public | <strong>getLanguageString()</strong> : <em>string</em><br /><em>Get the language code as a string.</em> |
 | public | <strong>getSourceText()</strong> : <em>string</em> |
 
 
@@ -58,10 +60,12 @@
 
 ### Class: \Ivuorinen\BusinessDataFetcher\Dto\BisCompanyBusinessIdChange
 
-> Company Business ID Change
+> Company Business Id Change
 
 | Visibility | Function |
 |:-----------|:---------|
+| public | <strong>getChangeString()</strong> : <em>string</em><br /><em>Get the description string of the change.</em> |
+| public | <strong>getLanguageString()</strong> : <em>string</em><br /><em>Get the language code as a string.</em> |
 | public | <strong>getSourceText()</strong> : <em>string</em> |
 
 
@@ -71,10 +75,11 @@
 
 ### Class: \Ivuorinen\BusinessDataFetcher\Dto\BisAddress
 
-> Business Address
+> Address
 
 | Visibility | Function |
 |:-----------|:---------|
+| public | <strong>getLanguageString()</strong> : <em>string</em><br /><em>Get the language code as a string.</em> |
 | public | <strong>getSourceText()</strong> : <em>string</em> |
 
 
@@ -88,6 +93,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
+| public | <strong>getLanguageString()</strong> : <em>string</em><br /><em>Get the language code as a string.</em> |
 | public | <strong>getSourceText()</strong> : <em>string</em> |
 
 
@@ -101,6 +107,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
+| public | <strong>getLanguageString()</strong> : <em>string</em><br /><em>Get the language code as a string.</em> |
 | public | <strong>getSourceText()</strong> : <em>string</em> |
 
 
@@ -114,9 +121,9 @@
 
 | Visibility | Function |
 |:-----------|:---------|
-| public | <strong>getAuthorityText()</strong> : <em>string</em> |
-| public | <strong>getRegisterText()</strong> : <em>string</em> |
-| public | <strong>getStatusText()</strong> : <em>string</em> |
+| public | <strong>getAuthorityString()</strong> : <em>string</em><br /><em>Get the name of the authority.</em> |
+| public | <strong>getLanguageString()</strong> : <em>string</em><br /><em>Get the language code as a string.</em> |
+| public | <strong>getRegisterString()</strong> : <em>string</em><br /><em>Get the name of the register.</em> |
 
 
 *This class extends \Spatie\DataTransferObject\DataTransferObject*
@@ -129,6 +136,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
+| public | <strong>getLanguageString()</strong> : <em>string</em><br /><em>Get the language code as a string.</em> |
 | public | <strong>getSourceText()</strong> : <em>string</em> |
 
 
@@ -142,6 +150,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
+| public | <strong>getLanguageString()</strong> : <em>string</em><br /><em>Get the language code as a string.</em> |
 | public | <strong>getSourceText()</strong> : <em>string</em> |
 
 
@@ -167,6 +176,7 @@
 
 | Visibility | Function |
 |:-----------|:---------|
+| public | <strong>getLanguageString()</strong> : <em>string</em><br /><em>Get the language code as a string.</em> |
 | public | <strong>getSourceText()</strong> : <em>string</em> |
 
 

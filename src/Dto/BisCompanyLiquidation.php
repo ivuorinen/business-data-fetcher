@@ -2,25 +2,22 @@
 
 namespace Ivuorinen\BusinessDataFetcher\Dto;
 
-use Ivuorinen\BusinessDataFetcher\Traits\HasSource;
 use Spatie\DataTransferObject\DataTransferObject;
+use Ivuorinen\BusinessDataFetcher\Traits;
 
 /**
  * Company Liquidation
  */
 class BisCompanyLiquidation extends DataTransferObject
 {
-    use HasSource;
-
-    /**
-     * One for current version and >1 for historical company forms
-     */
-    public int $version;
+    use Traits\HasSource;
+    use Traits\HasVersion;
+    use Traits\HasLanguage;
 
     /**
      * Date of registration
      */
-    public string $registrationDate = "";
+    public string $registrationDate = '';
 
     /**
      * Ending date of registration
@@ -30,15 +27,10 @@ class BisCompanyLiquidation extends DataTransferObject
     /**
      * Bankruptcy, liquidation or restructuring proceedings
      */
-    public string $name = "";
-
-    /**
-     * Two letter language code
-     */
-    public ?string $language = null;
+    public string $name = '';
 
     /**
      * Type of liquidation
      */
-    public string $type = "";
+    public string $type = '';
 }

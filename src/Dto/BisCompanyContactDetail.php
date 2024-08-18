@@ -2,25 +2,22 @@
 
 namespace Ivuorinen\BusinessDataFetcher\Dto;
 
-use Ivuorinen\BusinessDataFetcher\Traits\HasSource;
 use Spatie\DataTransferObject\DataTransferObject;
+use Ivuorinen\BusinessDataFetcher\Traits;
 
 /**
  * Company Contact Detail
  */
 class BisCompanyContactDetail extends DataTransferObject
 {
-    use HasSource;
-
-    /**
-     * One for current version and >1 for historical contact details
-     */
-    public int $version;
+    use Traits\HasSource;
+    use Traits\HasVersion;
+    use Traits\HasLanguage;
 
     /**
      * Date of registration
      */
-    public string $registrationDate = "";
+    public string $registrationDate = '';
 
     /**
      * Ending date of registration
@@ -28,17 +25,12 @@ class BisCompanyContactDetail extends DataTransferObject
     public ?string $endDate = null;
 
     /**
-     * Two letter language code
-     */
-    public ?string $language = null;
-
-    /**
      * Value of contact detail
      */
-    public string $value = "";
+    public string $value = '';
 
     /**
      * Type of contact detail
      */
-    public string $type = "";
+    public string $type = '';
 }

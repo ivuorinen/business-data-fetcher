@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use Ivuorinen\BusinessDataFetcher\Dto\BisCompanyDetails;
 use Ivuorinen\BusinessDataFetcher\Exceptions\ApiResponseErrorException;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Fetches and returns business data from avoindata
@@ -31,16 +32,13 @@ class BusinessDataFetcher
     /**
      * Fetch Business Information.
      *
-     * @param string $businessId
-     *
-     * @return array $response_data
+     * @return BisCompanyDetails[] $response_data
      * @throws \Exception|\GuzzleHttp\Exception\GuzzleException
      */
     public function getBusinessInformation(string $businessId): array
     {
         // Set request variables
         $requestUrl    = '/bis/v1';
-        $response_data = [];
 
         // Get the business data
         try {
@@ -54,7 +52,7 @@ class BusinessDataFetcher
                 );
             }
 
-            $response_data = $this->parse_response($response);
+            $response_data = $this->parseResponse($response);
         } catch (RequestException $exception) {
             throw new ApiResponseErrorException(
                 $exception->getMessage(),
@@ -67,13 +65,14 @@ class BusinessDataFetcher
     }
 
     /**
-     * @param \Psr\Http\Message\ResponseInterface $response
+     * Parse the response from the API.
      *
-     * @return array
+     * @return BisCompanyDetails[]
      * @throws \JsonException
      * @throws \Spatie\DataTransferObject\Exceptions\UnknownProperties
+     * @throws \Ivuorinen\BusinessDataFetcher\Exceptions\ApiResponseErrorException
      */
-    public function parse_response(\Psr\Http\Message\ResponseInterface $response): array
+    public function parseResponse(ResponseInterface $response): array
     {
         $data = json_decode(
             $response->getBody()->getContents(),
@@ -81,6 +80,20 @@ class BusinessDataFetcher
             512,
             JSON_THROW_ON_ERROR
         );
+
+        if (!is_array($data)) {
+            throw new ApiResponseErrorException(
+                'Invalid response data',
+                $response->getStatusCode()
+            );
+        }
+
+        if (!isset($data['results'])) {
+            throw new ApiResponseErrorException(
+                'Invalid response data',
+                $response->getStatusCode()
+            );
+        }
 
         $results = [];
 

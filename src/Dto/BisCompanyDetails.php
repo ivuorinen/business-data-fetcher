@@ -2,9 +2,9 @@
 
 namespace Ivuorinen\BusinessDataFetcher\Dto;
 
+use Spatie\DataTransferObject\DataTransferObject;
 use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Casters;
-use Spatie\DataTransferObject\DataTransferObject;
 
 /**
  * Company Details
@@ -91,12 +91,12 @@ class BisCompanyDetails extends DataTransferObject
     /**
      * Business ID
      */
-    public string $businessId = "";
+    public string $businessId = '';
 
     /**
      * Date of registration
      */
-    public string $registrationDate = "";
+    public string $registrationDate = '';
 
     /**
      * Company form
@@ -111,5 +111,5 @@ class BisCompanyDetails extends DataTransferObject
     /**
      * Primary company name
      */
-    public string $name = "";
+    public string $name = '';
 }

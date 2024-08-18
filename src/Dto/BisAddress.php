@@ -2,25 +2,22 @@
 
 namespace Ivuorinen\BusinessDataFetcher\Dto;
 
-use Ivuorinen\BusinessDataFetcher\Traits\HasSource;
 use Spatie\DataTransferObject\DataTransferObject;
+use Ivuorinen\BusinessDataFetcher\Traits;
 
 /**
- * Business Address
+ * Address
  */
 class BisAddress extends DataTransferObject
 {
-    use HasSource;
-
-    /**
-     * One for current version and >1 for historical addresses
-     */
-    public int $version;
+    use Traits\HasSource;
+    use Traits\HasVersion;
+    use Traits\HasLanguage;
 
     /**
      * Date of registration
      */
-    public string $registrationDate = "";
+    public string $registrationDate = '';
 
     /**
      * Ending date of registration
@@ -46,11 +43,6 @@ class BisAddress extends DataTransferObject
      * City of address
      */
     public ?string $city = null;
-
-    /**
-     * Two letter language code
-     */
-    public ?string $language = null;
 
     /**
      * Type of address, 1 for street address, 2 for postal address
