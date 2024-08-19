@@ -22,6 +22,6 @@
         "docs": "php vendor/bin/phpdoc-md generate src > docs.md",
         "lint": "php vendor/bin/phpcs --standard=PSR12 src",
         "lint-fix": "php vendor/bin/phpcbf --standard=PSR12 src",
-        "phpstan": "php vendor/bin/phpstan analyse src --level=9"
+        "phpstan": "php vendor/bin/phpstan analyse"
     }
 }
