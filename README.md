@@ -1,7 +1,7 @@
 # Business Data Fetcher
 
 This is an API client to Finnish Patent and Registration
-Office's (PRH) Business Information System (BIS).
+Office's (PRH) Business Information System (BIS) v1.
 
 Use it to get company data from the Business Information System by Business ID.
 
