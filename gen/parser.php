@@ -1,9 +1,20 @@
 <?php
 
-// Load models.txt that contains https://avoindata.prh.fi/ytj_en.html models.
-// Just copy and paste the plaintext Response Class contents to the file and
+// Previously https://avoindata.prh.fi/ytj_en.html had model definitions as plain text.
+// Now the page is not available anymore, but keeping the parser for future use.
+// The models.txt file is a copy of the models from that page.
+// This parser reads the models.txt file and generates DTO classes for the models in the src/Dto directory.
+//
+// Current version of the API by PRH is Swagger based, so the models are available in the Swagger definition:
+// https://avoindata.prh.fi/fi/ytj/swagger-ui
+//
 // run this file: php parser.php
-$models = file_get_contents(sprintf('%s%2$smodels.txt', __DIR__, DIRECTORY_SEPARATOR));
+
+// Set the directory separator alias.
+const DS = DIRECTORY_SEPARATOR;
+
+// Load the models.txt file.
+$models = file_get_contents(sprintf('%s%smodels.txt', __DIR__, DS));
 
 // Capture the names as one group, and blocks inside curly braces as another,
 // then combine them later.
@@ -18,9 +29,7 @@ $fields = array_map(static function ($f) {
 
     $d = array_map(static function ($field) {
         [$name_and_type, $docs] = explode(":", $field, 2);
-        $names_and_types = explode(" ", $name_and_type, 2);
-
-        [$name, $type] = $names_and_types;
+        [$name, $type] = explode(" ", $name_and_type, 2);
 
         $type = str_replace(["(", ")"], "", $type);
 
@@ -73,7 +82,6 @@ ksort($classes);
 
 $files = [];
 
-// Output the classes as preformatted for easier copypasta.
 // This is not the prettiest way to generate the codes, but it works.
 foreach ($classes as $className => $vars) {
     // Get name of the class from filename and split CamelCase to words.
@@ -84,7 +92,7 @@ foreach ($classes as $className => $vars) {
 
     $usesHeader = [
         "",
-        "use Spatie\DataTransferObject\DataTransferObject;"
+        "use Spatie\DataTransferObject\DataTransferObject;",
     ];
 
     $hasCasters = [
@@ -138,7 +146,6 @@ class $className extends DataTransferObject
         $file .= "\n" . implode("\n", $traits) . "\n";
     }
 
-
     foreach ($vars as $varKey => $varData) {
         if (in_array($varKey, $used, true)) {
             continue;
@@ -158,6 +165,7 @@ class $className extends DataTransferObject
         }
 
         $default = $varData["default"] !== null ? " = " . $varData["default"] . ";" : ";";
+
         $file .= "
     /**
      * {$varData["docs"]}{$typeHelper}
@@ -173,17 +181,9 @@ class $className extends DataTransferObject
 if (!empty($files)) {
     echo "Generating files:\n";
 
+    $dtoDir = sprintf('%s%s%s%s%s', dirname(__FILE__, 2), DS, 'src', DS, 'Dto');
     foreach ($files as $className => $file) {
-        $filePath = sprintf(
-            '%s%s%s%s%s%s%s.php',
-            dirname(__FILE__, 2),
-            DIRECTORY_SEPARATOR,
-            'src',
-            DIRECTORY_SEPARATOR,
-            'Dto',
-            DIRECTORY_SEPARATOR,
-            $className
-        );
+        $filePath = sprintf('%s%s%s.php', $dtoDir, DS, $className);
         echo $filePath . "\n";
         file_put_contents($filePath, $file);
     }
