@@ -32,5 +32,5 @@ class BisCompanyForm extends DataTransferObject
     /**
      * Type of company form
      */
-    public string $type = '';
+    public ?string $type = null;
 }

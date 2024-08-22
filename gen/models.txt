@@ -48,7 +48,7 @@ BisCompanyForm {
     endDate (string, optional): Ending date of registration
     name (string): Name of company form
     language (string, optional): Two letter language code
-    type (string): Type of company form
+    type (string, optional): Type of company form
 }
 
 BisCompanyLiquidation {
