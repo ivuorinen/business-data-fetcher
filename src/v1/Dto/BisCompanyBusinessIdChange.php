@@ -1,9 +1,9 @@
 <?php
 
-namespace Ivuorinen\BusinessDataFetcher\Dto;
+namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Spatie\DataTransferObject\DataTransferObject;
-use Ivuorinen\BusinessDataFetcher\Traits;
+use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
 /**
  * Company Business Id Change

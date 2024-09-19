@@ -1,14 +1,14 @@
 <?php
 
-namespace Ivuorinen\BusinessDataFetcher\Dto;
+namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Spatie\DataTransferObject\DataTransferObject;
-use Ivuorinen\BusinessDataFetcher\Traits;
+use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
 /**
- * Company Form
+ * Company Contact Detail
  */
-class BisCompanyForm extends DataTransferObject
+class BisCompanyContactDetail extends DataTransferObject
 {
     use Traits\HasSource;
     use Traits\HasVersion;
@@ -25,12 +25,12 @@ class BisCompanyForm extends DataTransferObject
     public ?string $endDate = null;
 
     /**
-     * Name of company form
+     * Value of contact detail
      */
-    public string $name = '';
+    public string $value = '';
 
     /**
-     * Type of company form
+     * Type of contact detail
      */
-    public ?string $type = null;
+    public string $type = '';
 }

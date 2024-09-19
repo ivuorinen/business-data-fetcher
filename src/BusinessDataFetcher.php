@@ -4,8 +4,8 @@ namespace Ivuorinen\BusinessDataFetcher;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
-use Ivuorinen\BusinessDataFetcher\Dto\BisCompanyDetails;
-use Ivuorinen\BusinessDataFetcher\Exceptions\ApiResponseErrorException;
+use Ivuorinen\BusinessDataFetcher\v1\Dto\BisCompanyDetails;
+use Ivuorinen\BusinessDataFetcher\v1\Exceptions\ApiResponseErrorException;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -70,7 +70,7 @@ class BusinessDataFetcher
      * @return BisCompanyDetails[]
      * @throws \JsonException
      * @throws \Spatie\DataTransferObject\Exceptions\UnknownProperties
-     * @throws \Ivuorinen\BusinessDataFetcher\Exceptions\ApiResponseErrorException
+     * @throws \Ivuorinen\BusinessDataFetcher\v1\Exceptions\ApiResponseErrorException
      */
     public function parseResponse(ResponseInterface $response): array
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ivuorinen\BusinessDataFetcher\Traits;
+namespace Ivuorinen\BusinessDataFetcher\v1\Traits;
 
 trait HasAuthority
 {
@@ -8,7 +8,13 @@ trait HasAuthority
      * @see getChangeString()
      * @var int $authority What authority the change is related to.
      */
-    public int $authority;
+    public int $authority = 0;
+    public ?string $authorityText = null;
+
+    public function __construct()
+    {
+        $this->authorityText = $this->getAuthorityString();
+    }
 
     /**
      * Get the name of the authority.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ivuorinen\BusinessDataFetcher\Traits;
+namespace Ivuorinen\BusinessDataFetcher\v1\Traits;
 
 trait HasSource
 {
@@ -19,7 +19,16 @@ trait HasSource
      *
      * @var int|null
      */
-    public ?int $source;
+    public ?int $source = null;
+    /**
+     * @var string|null $sourceText Source of the information.
+     */
+    public ?string $sourceText = null;
+
+    public function __construct()
+    {
+        $this->sourceText = $this->source !== null ? $this->getSourceText() : null;
+    }
 
     public function getSourceText(): string
     {

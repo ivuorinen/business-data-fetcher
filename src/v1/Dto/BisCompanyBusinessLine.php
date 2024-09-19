@@ -1,18 +1,23 @@
 <?php
 
-namespace Ivuorinen\BusinessDataFetcher\Dto;
+namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Spatie\DataTransferObject\DataTransferObject;
-use Ivuorinen\BusinessDataFetcher\Traits;
+use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
 /**
- * Company Liquidation
+ * Company Business Line
  */
-class BisCompanyLiquidation extends DataTransferObject
+class BisCompanyBusinessLine extends DataTransferObject
 {
     use Traits\HasSource;
     use Traits\HasVersion;
     use Traits\HasLanguage;
+
+    /**
+     * Zero for main line of business, positive for others
+     */
+    public int $order;
 
     /**
      * Date of registration
@@ -25,12 +30,7 @@ class BisCompanyLiquidation extends DataTransferObject
     public ?string $endDate = null;
 
     /**
-     * Bankruptcy, liquidation or restructuring proceedings
+     * Name of line of business
      */
     public string $name = '';
-
-    /**
-     * Type of liquidation
-     */
-    public string $type = '';
 }

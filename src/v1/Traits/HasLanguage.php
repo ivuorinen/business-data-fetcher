@@ -1,6 +1,6 @@
 <?php
 
-namespace Ivuorinen\BusinessDataFetcher\Traits;
+namespace Ivuorinen\BusinessDataFetcher\v1\Traits;
 
 trait HasLanguage
 {

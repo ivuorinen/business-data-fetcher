@@ -1,21 +1,21 @@
 <?php
 
-namespace Ivuorinen\BusinessDataFetcher\Dto;
+namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Spatie\DataTransferObject\DataTransferObject;
-use Ivuorinen\BusinessDataFetcher\Traits;
+use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
 /**
- * Company Business Line
+ * Company Registered Office
  */
-class BisCompanyBusinessLine extends DataTransferObject
+class BisCompanyRegisteredOffice extends DataTransferObject
 {
     use Traits\HasSource;
     use Traits\HasVersion;
     use Traits\HasLanguage;
 
     /**
-     * Zero for main line of business, positive for others
+     * Zero for primary place of registered office, positive for others
      */
     public int $order;
 
@@ -30,7 +30,7 @@ class BisCompanyBusinessLine extends DataTransferObject
     public ?string $endDate = null;
 
     /**
-     * Name of line of business
+     * Name of place of registered office
      */
     public string $name = '';
 }

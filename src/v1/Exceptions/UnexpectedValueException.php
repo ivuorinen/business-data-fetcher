@@ -1,6 +1,6 @@
 <?php
 
-namespace Ivuorinen\BusinessDataFetcher\Exceptions;
+namespace Ivuorinen\BusinessDataFetcher\v1\Exceptions;
 
 use Exception;
 
