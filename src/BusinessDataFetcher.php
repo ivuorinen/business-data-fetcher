@@ -2,47 +2,34 @@
 
 namespace Ivuorinen\BusinessDataFetcher;
 
-use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
+use Ivuorinen\BusinessDataFetcher\Http\AbstractClient;
 use Ivuorinen\BusinessDataFetcher\v1\Dto\BisCompanyDetails;
 use Ivuorinen\BusinessDataFetcher\v1\Exceptions\ApiResponseErrorException;
 use Psr\Http\Message\ResponseInterface;
 
-/**
- * Fetches and returns business data from avoindata
- */
-class BusinessDataFetcher
+class BusinessDataFetcher extends AbstractClient
 {
-    /**
-     * @var \GuzzleHttp\Client
-     */
-    private Client $httpClient;
-
-    /**
-     * BusinessDataFetcher constructor.
-     */
-    public function __construct()
+    protected function getBaseUri(): string
     {
-        $this->httpClient = new Client([
-            'base_uri' => 'https://avoindata.prh.fi',
-            'timeout'  => 2,
-        ]);
+        return 'https://avoindata.prh.fi';
+    }
+
+    protected function getTimeout(): int
+    {
+        return 2;
     }
 
     /**
      * Fetch Business Information.
      *
-     * @return BisCompanyDetails[] $response_data
+     * @return BisCompanyDetails[]
      * @throws \Exception|\GuzzleHttp\Exception\GuzzleException
      */
     public function getBusinessInformation(string $businessId): array
     {
-        // Set request variables
-        $requestUrl    = '/bis/v1';
-
-        // Get the business data
         try {
-            $uri      = $requestUrl . '/' . $businessId;
+            $uri      = '/bis/v1/' . $businessId;
             $response = $this->httpClient->get($uri);
 
             if ($response->getStatusCode() !== 200) {
@@ -52,7 +39,7 @@ class BusinessDataFetcher
                 );
             }
 
-            $response_data = $this->parseResponse($response);
+            return $this->parseResponse($response);
         } catch (RequestException $exception) {
             throw new ApiResponseErrorException(
                 $exception->getMessage(),
@@ -60,8 +47,6 @@ class BusinessDataFetcher
                 $exception
             );
         }
-
-        return $response_data;
     }
 
     /**
@@ -69,8 +54,7 @@ class BusinessDataFetcher
      *
      * @return BisCompanyDetails[]
      * @throws \JsonException
-     * @throws \Spatie\DataTransferObject\Exceptions\UnknownProperties
-     * @throws \Ivuorinen\BusinessDataFetcher\v1\Exceptions\ApiResponseErrorException
+     * @throws ApiResponseErrorException
      */
     public function parseResponse(ResponseInterface $response): array
     {
@@ -88,7 +72,7 @@ class BusinessDataFetcher
             );
         }
 
-        if (!isset($data['results'])) {
+        if (!isset($data['results']) || !is_array($data['results'])) {
             throw new ApiResponseErrorException(
                 'Invalid response data',
                 $response->getStatusCode()
@@ -98,7 +82,7 @@ class BusinessDataFetcher
         $results = [];
 
         foreach ($data['results'] as $result) {
-            $results[] = new BisCompanyDetails($result);
+            $results[] = $this->mapper->map(BisCompanyDetails::class, $result);
         }
 
         return $results;

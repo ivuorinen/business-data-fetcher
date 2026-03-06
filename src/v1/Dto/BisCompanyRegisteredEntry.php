@@ -2,35 +2,22 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
-use Spatie\DataTransferObject\DataTransferObject;
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
-/**
- * Company Registered Entry
- */
-class BisCompanyRegisteredEntry extends DataTransferObject
+final readonly class BisCompanyRegisteredEntry
 {
     use Traits\HasAuthority;
     use Traits\HasLanguage;
     use Traits\HasRegister;
 
-    /**
-     * Description of entry
-     */
-    public string $description = '';
-
-    /**
-     * Zero for common entries, one for ‘Unregistered’ and two for ‘Registered’
-     */
-    public int $status;
-
-    /**
-     * Date of registration
-     */
-    public string $registrationDate = '';
-
-    /**
-     * Ending date of registration
-     */
-    public ?string $endDate = null;
+    public function __construct(
+        public string $description = '',
+        public int $status = 0,
+        public string $registrationDate = '',
+        public ?string $endDate = null,
+        public int $authority = 0,
+        public ?string $language = null,
+        public int|null $register = null,
+    ) {
+    }
 }

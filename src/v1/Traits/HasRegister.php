@@ -4,15 +4,6 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Traits;
 
 trait HasRegister
 {
-    /**
-     * @see getRegisterString()
-     * @var int|null $register What register the change is related to.
-     */
-    public int|null $register;
-
-    /**
-     * Get the name of the register.
-     */
     public function getRegisterString(): string
     {
         return match ($this->register) {

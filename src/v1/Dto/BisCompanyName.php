@@ -2,35 +2,21 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
-use Spatie\DataTransferObject\DataTransferObject;
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
-/**
- * Company Name
- */
-class BisCompanyName extends DataTransferObject
+final readonly class BisCompanyName
 {
     use Traits\HasSource;
-    use Traits\HasVersion;
     use Traits\HasLanguage;
 
-    /**
-     * Zero for primary company name, other for translations of the primary company name and auxiliary company names
-     */
-    public int $order;
-
-    /**
-     * Date of registration
-     */
-    public string $registrationDate = '';
-
-    /**
-     * Ending date of registration
-     */
-    public ?string $endDate = null;
-
-    /**
-     * Company name
-     */
-    public string $name = '';
+    public function __construct(
+        public int $order = 0,
+        public string $registrationDate = '',
+        public ?string $endDate = null,
+        public string $name = '',
+        public ?int $source = null,
+        public int $version = 0,
+        public ?string $language = null,
+    ) {
+    }
 }
