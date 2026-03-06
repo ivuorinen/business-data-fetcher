@@ -5,6 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^7.4",
         "cuyz/valinor": "^1.0"
     },
@@ -23,8 +24,8 @@
         "phpstan/phpstan": "^2.0",
         "pestphp/pest": "^3.0",
         "rector/rector": "^2.3",
-        "captainhook/captainhook": "*",
-        "captainhook/hook-installer": "*",
+        "captainhook/captainhook": "^5.0",
+        "captainhook/hook-installer": "^1.0",
         "ramsey/conventional-commits": "^1.7",
         "captainhook/secrets": "^0.9.7"
     },

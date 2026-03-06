@@ -13,7 +13,7 @@ class Client extends AbstractClient
 {
     protected function getBaseUri(): string
     {
-        return 'https://avoindata.prh.fi/opendata-ytj-api/v3';
+        return 'https://avoindata.prh.fi';
     }
 
     /**

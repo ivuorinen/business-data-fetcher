@@ -50,7 +50,7 @@ it('throws V3ApiException on description failure', function () {
 })->throws(V3ApiException::class);
 
 it('retrieves post codes', function () {
-    $json = json_encode([
+    $json = (string) json_encode([
         ['postCode' => '00100', 'city' => 'HELSINKI', 'active' => true, 'languageCode' => '1', 'municipalityCode' => '091'],
         ['postCode' => '00200', 'city' => 'HELSINKI', 'active' => true, 'languageCode' => '1', 'municipalityCode' => '091'],
     ]);

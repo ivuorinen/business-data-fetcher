@@ -44,6 +44,3 @@ composer test          # Pest test suite
 - `pinact run -u -v --fix` — pin all action refs to commit SHAs after editing workflows
 - PHP matrix: 8.2, 8.3, 8.4
 
-## Current Branch: feat/v3-client
-
-Major rewrite: migrated from spatie/data-transfer-object to cuyz/valinor, added v3 API client, Pest test suite, upgraded phpcs to v4.

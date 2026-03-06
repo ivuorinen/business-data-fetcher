@@ -12,7 +12,7 @@ final readonly class Company
      * @param list<Address> $addresses
      */
     public function __construct(
-        public BusinessId $businessId = new BusinessId(),
+        public BusinessId $businessId,
         public string $tradeRegisterStatus = '',
         public string $lastModified = '',
         public ?EuId $euId = null,

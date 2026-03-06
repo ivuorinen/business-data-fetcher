@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c 'input=$(cat); fp=$(echo \"$input\" | jq -r \".tool_input.file_path\"); if [[ \"$fp\" == *composer.lock ]] || [[ \"$fp\" == */vendor/* ]]; then echo \"{\\\"decision\\\":\\\"deny\\\",\\\"reason\\\":\\\"Do not edit $fp directly\\\"}\" >&2; exit 2; fi'"
+            "command": "bash -c 'input=$(cat); fp=$(echo \"$input\" | jq -r \".tool_input.file_path\"); if [[ \"$fp\" == *composer.lock ]] || [[ \"$fp\" == vendor/* ]] || [[ \"$fp\" == */vendor/* ]]; then echo \"{\\\"decision\\\":\\\"deny\\\",\\\"reason\\\":\\\"Do not edit $fp directly\\\"}\" >&2; exit 2; fi'"
           }
         ]
       }
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c 'input=$(cat); fp=$(echo \"$input\" | jq -r \".tool_input.file_path\"); if [[ \"$fp\" == *.php ]]; then cd \"$CLAUDE_PROJECT_DIR\" && composer lint-fix -- \"$fp\" 2>/dev/null; fi; true'"
+            "command": "bash -c 'input=$(cat); fp=$(echo \"$input\" | jq -r \".tool_input.file_path\"); if [[ \"$fp\" == *.php ]]; then cd \"$CLAUDE_PROJECT_DIR\" && php vendor/bin/phpcbf --standard=PSR12 \"$fp\" 2>/dev/null; fi; true'"
           },
           {
             "type": "command",

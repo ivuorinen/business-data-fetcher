@@ -29,3 +29,7 @@ it('maps all register codes correctly', function (int $code, string $expected) {
 it('returns unknown for unrecognized register', function () {
     expect(makeRegisterObject(99)->getRegisterString())->toBe('unknown:99');
 });
+
+it('returns unknown for null register', function () {
+    expect(makeRegisterObject(null)->getRegisterString())->toBe('unknown:');
+});
