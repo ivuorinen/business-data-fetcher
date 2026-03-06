@@ -4,10 +4,14 @@ name: PR Lint
 on:
   push:
     branches-ignore: [master, main]
-    # Remove the line above to run when pushing to master
   pull_request:
     branches: [master, main]
 
 jobs:
   SuperLinter:
-    uses: ivuorinen/.github/.github/workflows/pr-lint.yml@main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: ivuorinen/actions/pr-lint@d1af04260d903f572ee953cc790ff7c1410709a6 # v2026.03.05
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}

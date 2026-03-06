@@ -8,12 +8,15 @@ on:
   workflow_call:
   workflow_dispatch:
 
+permissions:
+  contents: write # only for delete-branch option
+  issues: write
+  pull-requests: write
+
 jobs:
   stale:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # only for delete-branch option
-      issues: write
-      pull-requests: write
     steps:
-      - uses: ivuorinen/actions/stale@main
+      - uses: ivuorinen/actions/stale@d1af04260d903f572ee953cc790ff7c1410709a6 # v2026.03.05
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
