@@ -22,7 +22,11 @@
         "squizlabs/php_codesniffer": "^4.0",
         "phpstan/phpstan": "^2.0",
         "pestphp/pest": "^3.0",
-        "rector/rector": "^2.3"
+        "rector/rector": "^2.3",
+        "captainhook/captainhook": "*",
+        "captainhook/hook-installer": "*",
+        "ramsey/conventional-commits": "^1.7",
+        "captainhook/secrets": "^0.9.7"
     },
     "scripts": {
         "lint": [
@@ -39,7 +43,8 @@
     },
     "config": {
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "captainhook/hook-installer": true
         }
     }
 }
