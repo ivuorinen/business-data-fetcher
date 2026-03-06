@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'input=$(cat); fp=$(echo \"$input\" | jq -r \".tool_input.file_path\"); if [[ \"$fp\" == *composer.lock ]] || [[ \"$fp\" == */vendor/* ]]; then echo \"{\\\"decision\\\":\\\"deny\\\",\\\"reason\\\":\\\"Do not edit $fp directly\\\"}\" >&2; exit 2; fi'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'input=$(cat); fp=$(echo \"$input\" | jq -r \".tool_input.file_path\"); if [[ \"$fp\" == *.php ]]; then cd \"$CLAUDE_PROJECT_DIR\" && composer lint-fix -- \"$fp\" 2>/dev/null; fi; true'"
+          },
+          {
+            "type": "command",
+            "command": "bash -c 'input=$(cat); fp=$(echo \"$input\" | jq -r \".tool_input.file_path\"); if [[ \"$fp\" == *.php ]]; then cd \"$CLAUDE_PROJECT_DIR\" && composer phpstan 2>&1 | tail -5; fi; true'",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
