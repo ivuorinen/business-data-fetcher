@@ -1,0 +1,101 @@
+{
+  "totalResults": 1,
+  "companies": [
+    {
+      "businessId": {
+        "value": "1639413-9",
+        "registrationDate": "2001-04-03",
+        "source": "YTJ"
+      },
+      "euId": {
+        "value": "FIFOO123456",
+        "source": "YTJ"
+      },
+      "names": [
+        {
+          "name": "Oy Example Ab",
+          "type": "TOIM",
+          "registrationDate": "2015-01-19",
+          "endDate": null,
+          "version": 1,
+          "source": "YTJ"
+        }
+      ],
+      "mainBusinessLine": {
+        "code": "62010",
+        "descriptions": [
+          {
+            "languageCode": "3",
+            "description": "Computer programming activities"
+          }
+        ],
+        "typeCodeSet": "TOL2008",
+        "registrationDate": "2017-12-31",
+        "source": "VERO"
+      },
+      "website": {
+        "url": "www.example.fi",
+        "registrationDate": "2019-04-30",
+        "source": "YTJ"
+      },
+      "companyForms": [
+        {
+          "type": "OY",
+          "descriptions": [
+            {
+              "languageCode": "1",
+              "description": "Osakeyhtiö"
+            },
+            {
+              "languageCode": "3",
+              "description": "Limited company"
+            }
+          ],
+          "registrationDate": "2001-04-03",
+          "endDate": null,
+          "version": 1,
+          "source": "YTJ"
+        }
+      ],
+      "companySituations": [],
+      "registeredEntries": [
+        {
+          "type": "REK",
+          "descriptions": [
+            {
+              "languageCode": "3",
+              "description": "Registered"
+            }
+          ],
+          "registrationDate": "2001-06-01",
+          "endDate": null,
+          "register": "1",
+          "authority": "2"
+        }
+      ],
+      "addresses": [
+        {
+          "type": 1,
+          "street": "Testitie 1",
+          "postCode": "00100",
+          "postOffices": [
+            {
+              "city": "HELSINKI",
+              "languageCode": "1",
+              "municipalityCode": "091"
+            }
+          ],
+          "co": null,
+          "country": "FI",
+          "registrationDate": "2019-04-30",
+          "source": "YTJ"
+        }
+      ],
+      "tradeRegisterStatus": "2",
+      "status": "ACTIVE",
+      "registrationDate": "2001-04-03",
+      "endDate": null,
+      "lastModified": "2023-06-15T10:30:00Z"
+    }
+  ]
+}
