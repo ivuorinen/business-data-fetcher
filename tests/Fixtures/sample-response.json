@@ -1,0 +1,112 @@
+{
+  "type": "fi.prh.opendata.bis",
+  "version": "1",
+  "totalResults": -1,
+  "resultsFrom": 0,
+  "previousResultsUri": null,
+  "nextResultsUri": null,
+  "exceptionNoticeUri": null,
+  "results": [
+    {
+      "businessId": "1639413-9",
+      "registrationDate": "2001-04-03",
+      "companyForm": "OY",
+      "detailsUri": null,
+      "name": "Oy Example Ab",
+      "names": [
+        {
+          "order": 0,
+          "version": 1,
+          "registrationDate": "2015-01-19",
+          "endDate": null,
+          "name": "Oy Example Ab",
+          "source": 0,
+          "language": "fi"
+        }
+      ],
+      "auxiliaryNames": [],
+      "addresses": [
+        {
+          "careOf": null,
+          "street": "Testitie 1",
+          "postCode": "00100",
+          "type": 1,
+          "city": "HELSINKI",
+          "country": "FI",
+          "source": 0,
+          "version": 1,
+          "registrationDate": "2019-04-30",
+          "endDate": null,
+          "language": "fi"
+        }
+      ],
+      "companyForms": [
+        {
+          "version": 1,
+          "registrationDate": "2001-04-03",
+          "endDate": null,
+          "name": "Osakeyhtiö",
+          "type": "OY",
+          "source": 0,
+          "language": "fi"
+        }
+      ],
+      "liquidations": [],
+      "businessLines": [
+        {
+          "order": 0,
+          "version": 1,
+          "registrationDate": "2017-12-31",
+          "endDate": null,
+          "name": "Computer programming activities",
+          "source": 2,
+          "language": "en"
+        }
+      ],
+      "languages": [
+        {
+          "version": 1,
+          "registrationDate": "2001-04-03",
+          "endDate": null,
+          "name": "Finnish",
+          "source": 0,
+          "language": "en"
+        }
+      ],
+      "registeredOffices": [
+        {
+          "order": 0,
+          "version": 1,
+          "registrationDate": "2001-04-03",
+          "endDate": null,
+          "name": "HELSINKI",
+          "source": 0,
+          "language": "fi"
+        }
+      ],
+      "contactDetails": [
+        {
+          "version": 1,
+          "registrationDate": "2019-04-30",
+          "endDate": null,
+          "language": "fi",
+          "value": "www.example.fi",
+          "type": "Website",
+          "source": 0
+        }
+      ],
+      "registeredEntries": [
+        {
+          "authority": 2,
+          "register": 1,
+          "status": 2,
+          "registrationDate": "2001-06-01",
+          "endDate": null,
+          "description": "Registered",
+          "language": "en"
+        }
+      ],
+      "businessIdChanges": []
+    }
+  ]
+}

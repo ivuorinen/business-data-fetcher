@@ -5,23 +5,51 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ext-json": "*",
         "guzzlehttp/guzzle": "^7.4",
-        "spatie/data-transfer-object": "^3.9"
+        "cuyz/valinor": "^1.0"
     },
     "autoload": {
         "psr-4": {
             "Ivuorinen\\BusinessDataFetcher\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Ivuorinen\\BusinessDataFetcher\\Tests\\": "tests/"
+        }
+    },
     "require-dev": {
         "squizlabs/php_codesniffer": "^4.0",
-        "ivuorinen/markdowndocs": "^4.0",
-        "phpstan/phpstan": "^2.0"
+        "phpstan/phpstan": "^2.0",
+        "pestphp/pest": "^3.0",
+        "rector/rector": "^2.3",
+        "captainhook/captainhook": "^5.0",
+        "captainhook/hook-installer": "^1.0",
+        "ramsey/conventional-commits": "^1.7",
+        "captainhook/secrets": "^0.9.7",
+        "phpstan/extension-installer": "^1.0",
+        "jbelien/phpstan-sarif-formatter": "^1.0",
+        "bartlett/sarif-php-converters": "^1.0"
     },
     "scripts": {
-        "docs": "php vendor/bin/phpdoc-md generate src > docs.md",
-        "lint": "php vendor/bin/phpcs --standard=PSR12 src",
-        "lint-fix": "php vendor/bin/phpcbf --standard=PSR12 src",
-        "phpstan": "php vendor/bin/phpstan analyse"
+        "lint": [
+            "php vendor/bin/phpcs --standard=PSR12 src",
+            "php vendor/bin/rector --dry-run"
+        ],
+        "lint-fix": [
+            "php vendor/bin/phpcbf --standard=PSR12 src",
+            "php vendor/bin/rector"
+        ],
+        "rector": "php vendor/bin/rector",
+        "phpstan": "php vendor/bin/phpstan analyse",
+        "test": "php vendor/bin/pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "captainhook/hook-installer": true,
+            "phpstan/extension-installer": true
+        }
     }
 }

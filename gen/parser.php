@@ -87,7 +87,7 @@ foreach ($classes as $className => $vars) {
     // Get name of the class from filename and split CamelCase to words.
     $classNameString = $className;
     $classNameString = str_replace("Bis", "", $classNameString);
-    $classNameString = preg_replace('/(?<!^)[A-Z]/', ' $0', $classNameString);
+    $classNameString = (string)preg_replace('/(?<!^)[A-Z]/', ' $0', $classNameString);
     $classNameString = ucwords($classNameString);
 
     $usesHeader = [
@@ -125,7 +125,7 @@ foreach ($classes as $className => $vars) {
     }
 
     if (!empty($traits)) {
-        $usesHeader[] = "use Ivuorinen\BusinessDataFetcher\Traits;";
+        $usesHeader[] = "use Ivuorinen\BusinessDataFetcher\\v1\Traits;";
     }
 
     $usesString = implode("\n", $usesHeader);
@@ -134,7 +134,7 @@ foreach ($classes as $className => $vars) {
 
     $file = "<?php
 
-namespace Ivuorinen\BusinessDataFetcher\Dto;
+namespace Ivuorinen\BusinessDataFetcher\\v1\Dto;
 $usesString
 
 /**
@@ -181,7 +181,9 @@ class $className extends DataTransferObject
 if (!empty($files)) {
     echo "Generating files:\n";
 
-    $dtoDir = sprintf('%s%s%s%s%s', dirname(__FILE__, 2), DS, 'src', DS, 'Dto');
+    // Set the directory for the DTO classes.
+    $dtoDir = implode(DS, [dirname(__FILE__, 2), 'src', 'v1', 'Dto']);
+
     foreach ($files as $className => $file) {
         $filePath = sprintf('%s%s%s.php', $dtoDir, DS, $className);
         echo $filePath . "\n";
