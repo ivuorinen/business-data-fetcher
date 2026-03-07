@@ -24,7 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-
 - **BREAKING:** Replaced `spatie/data-transfer-object` with `cuyz/valinor` for DTO hydration
 - **BREAKING:** All v1 DTOs are now `final readonly` classes with constructor promotion
 - **BREAKING:** Removed `$sourceText` and `$authorityText` computed properties from traits; use `getSourceText()` and `getAuthorityString()` methods instead

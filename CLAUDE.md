@@ -43,4 +43,3 @@ composer test          # Pest test suite
 - Renovate config: `.github/renovate.json` extends `github>ivuorinen/renovate-config`
 - `pinact run -u -v --fix` — pin all action refs to commit SHAs after editing workflows
 - PHP matrix: 8.2, 8.3, 8.4
-
