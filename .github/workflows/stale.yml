@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write # only for delete-branch option
+  contents: read
   issues: write
   pull-requests: write
 

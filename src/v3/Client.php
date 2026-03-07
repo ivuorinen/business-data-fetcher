@@ -9,8 +9,12 @@ use Ivuorinen\BusinessDataFetcher\v3\Dto\PostCodeEntry;
 use Ivuorinen\BusinessDataFetcher\v3\Exceptions\V3ApiException;
 use Psr\Http\Message\StreamInterface;
 
+/** Client for the PRH YTJ v3 API (Finnish business data). */
 class Client extends AbstractClient
 {
+    private const API_PREFIX = '/opendata-ytj-api/v3';
+
+    /** @inheritDoc */
     protected function getBaseUri(): string
     {
         return 'https://avoindata.prh.fi';
@@ -50,7 +54,7 @@ class Client extends AbstractClient
         ], fn (string|int|null $v): bool => $v !== null);
 
         try {
-            $data = $this->getJson('/opendata-ytj-api/v3/companies', $query);
+            $data = $this->getJson(self::API_PREFIX . '/companies', $query);
             return $this->mapper->map(CompanySearchResult::class, $data);
         } catch (RequestException $e) {
             throw new V3ApiException($e->getMessage(), $e->getCode(), $e);
@@ -66,7 +70,7 @@ class Client extends AbstractClient
     public function getDescription(string $code, string $lang = 'en'): string
     {
         try {
-            $response = $this->httpClient->get('/opendata-ytj-api/v3/description', [
+            $response = $this->httpClient->get(self::API_PREFIX . '/description', [
                 'query' => ['code' => $code, 'lang' => $lang],
             ]);
 
@@ -86,7 +90,7 @@ class Client extends AbstractClient
     public function getPostCodes(string $lang = 'en'): array
     {
         try {
-            $data = $this->getJson('/opendata-ytj-api/v3/post_codes', ['lang' => $lang]);
+            $data = $this->getJson(self::API_PREFIX . '/post_codes', ['lang' => $lang]);
 
             $results = [];
             foreach ($data as $entry) {
@@ -108,7 +112,7 @@ class Client extends AbstractClient
     public function getAllCompanies(): StreamInterface
     {
         try {
-            $response = $this->httpClient->get('/opendata-ytj-api/v3/all_companies', [
+            $response = $this->httpClient->get(self::API_PREFIX . '/all_companies', [
                 'stream' => true,
             ]);
 

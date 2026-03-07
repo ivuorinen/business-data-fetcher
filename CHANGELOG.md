@@ -27,9 +27,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING:** Removed `$sourceText` and `$authorityText` computed properties from traits; use `getSourceText()` and `getAuthorityString()` methods instead
 - **BREAKING:** `BusinessDataFetcher` constructor now accepts an optional `?Client` parameter for testability
 - Upgraded `squizlabs/php_codesniffer` from v3 to v4
-- `BusinessDataFetcher` now extends `AbstractClient`
-- Traits are now method-only (no properties or constructors)
-- Removed empty `HasVersion` trait (version is a regular constructor property)
+- **BREAKING:** `BusinessDataFetcher` now extends `AbstractClient`
+- **BREAKING:** Traits are now method-only (no properties or constructors)
+- **BREAKING:** Removed empty `HasVersion` trait (version is a regular constructor property)
 
 ### Removed
 - `spatie/data-transfer-object` dependency
