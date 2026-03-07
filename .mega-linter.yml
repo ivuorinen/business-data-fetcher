@@ -23,4 +23,4 @@ DISABLE_LINTERS:
 PHP_PHPCS_CLI_LINT_MODE: project
 PHP_PHPCS_ARGUMENTS: "--warning-severity=0"
 
-FILTER_REGEX_EXCLUDE: "(vendor/|node_modules/|\\.github/|\\.git/|\\.claude/|composer\\.lock|package-lock\\.json)"
+FILTER_REGEX_EXCLUDE: "(vendor/|node_modules/|\\.git/|\\.claude/|composer\\.lock|package-lock\\.json)"

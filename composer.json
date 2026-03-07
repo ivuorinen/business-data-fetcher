@@ -28,9 +28,9 @@
         "captainhook/hook-installer": "^1.0",
         "ramsey/conventional-commits": "^1.7",
         "captainhook/secrets": "^0.9.7",
-        "phpstan/extension-installer": "*",
-        "jbelien/phpstan-sarif-formatter": "*",
-        "bartlett/sarif-php-converters": "*"
+        "phpstan/extension-installer": "^1.0",
+        "jbelien/phpstan-sarif-formatter": "^1.0",
+        "bartlett/sarif-php-converters": "^1.0"
     },
     "scripts": {
         "lint": [
