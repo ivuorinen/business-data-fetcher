@@ -9,7 +9,7 @@ final readonly class BusinessLine
      * @param list<DescriptionEntry> $descriptions
      */
     public function __construct(
-        public string $code = '',
+        public string $code,
         public array $descriptions = [],
         public ?string $typeCodeSet = null,
         public ?string $registrationDate = null,

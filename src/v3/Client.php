@@ -56,8 +56,8 @@ class Client extends AbstractClient
         try {
             $data = $this->getJson(self::API_PREFIX . '/companies', $query);
             return $this->mapper->map(CompanySearchResult::class, $data);
-        } catch (RequestException $e) {
-            throw new V3ApiException($e->getMessage(), $e->getCode(), $e);
+        } catch (RequestException | \JsonException $e) {
+            throw new V3ApiException($e->getMessage(), (int) $e->getCode(), $e);
         }
     }
 
@@ -98,8 +98,8 @@ class Client extends AbstractClient
             }
 
             return $results;
-        } catch (RequestException $e) {
-            throw new V3ApiException($e->getMessage(), $e->getCode(), $e);
+        } catch (RequestException | \JsonException $e) {
+            throw new V3ApiException($e->getMessage(), (int) $e->getCode(), $e);
         }
     }
 

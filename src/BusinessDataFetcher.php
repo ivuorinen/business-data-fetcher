@@ -32,7 +32,7 @@ class BusinessDataFetcher extends AbstractClient
     public function getBusinessInformation(string $businessId): array
     {
         try {
-            $uri      = '/bis/v1/' . $businessId;
+            $uri      = '/bis/v1/' . rawurlencode($businessId);
             $response = $this->httpClient->get($uri);
 
             if ($response->getStatusCode() !== 200) {
