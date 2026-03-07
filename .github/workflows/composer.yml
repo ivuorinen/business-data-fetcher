@@ -21,21 +21,9 @@ jobs:
         php-versions: ['8.2', '8.3', '8.4']
 
     steps:
-<<<<<<< HEAD
-    - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
-||||||| parent of 21113f1 (ci: update workflows to use ivuorinen/actions, pin SHAs, add PHP 8.4)
-    - uses: actions/checkout@v4
-=======
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
->>>>>>> 21113f1 (ci: update workflows to use ivuorinen/actions, pin SHAs, add PHP 8.4)
 
-<<<<<<< HEAD
-    - uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401 # v2
-||||||| parent of 21113f1 (ci: update workflows to use ivuorinen/actions, pin SHAs, add PHP 8.4)
-    - uses: shivammathur/setup-php@v2
-=======
     - uses: shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1 # 2.36.0
->>>>>>> 21113f1 (ci: update workflows to use ivuorinen/actions, pin SHAs, add PHP 8.4)
       with:
         php-version: ${{ matrix.php-versions }}
 
@@ -44,13 +32,7 @@ jobs:
 
     - name: Cache Composer packages
       id: composer-cache
-<<<<<<< HEAD
-      uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5
-||||||| parent of 21113f1 (ci: update workflows to use ivuorinen/actions, pin SHAs, add PHP 8.4)
-      uses: actions/cache@v4
-=======
       uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
->>>>>>> 21113f1 (ci: update workflows to use ivuorinen/actions, pin SHAs, add PHP 8.4)
       with:
         path: vendor
         key: ${{ runner.os }}-php-${{ matrix.php-versions }}-${{ hashFiles('**/composer.lock') }}
