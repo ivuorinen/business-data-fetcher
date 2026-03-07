@@ -8,13 +8,16 @@ use Ivuorinen\BusinessDataFetcher\v1\Dto\BisCompanyDetails;
 use Ivuorinen\BusinessDataFetcher\v1\Exceptions\ApiResponseErrorException;
 use Psr\Http\Message\ResponseInterface;
 
+/** Client for the PRH BIS v1 API (Finnish business data). */
 class BusinessDataFetcher extends AbstractClient
 {
+    /** @inheritDoc */
     protected function getBaseUri(): string
     {
         return 'https://avoindata.prh.fi';
     }
 
+    /** @inheritDoc */
     protected function getTimeout(): int
     {
         return 2;
