@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - v3 API client (`Ivuorinen\BusinessDataFetcher\v3\Client`) with support for:
   - Company search (`searchCompanies()`)
   - Code list descriptions (`getDescription()`)
@@ -22,6 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.github/labels.yml` for label sync workflow
 
 ### Changed
+
+
 - **BREAKING:** Replaced `spatie/data-transfer-object` with `cuyz/valinor` for DTO hydration
 - **BREAKING:** All v1 DTOs are now `final readonly` classes with constructor promotion
 - **BREAKING:** Removed `$sourceText` and `$authorityText` computed properties from traits; use `getSourceText()` and `getAuthorityString()` methods instead
@@ -32,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING:** Removed empty `HasVersion` trait (version is a regular constructor property)
 
 ### Removed
+
 - `spatie/data-transfer-object` dependency
 - `ivuorinen/markdowndocs` dependency (incompatible with Pest's symfony/console requirement)
 - `composer docs` script (pending markdowndocs update)

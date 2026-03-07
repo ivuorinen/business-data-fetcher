@@ -76,7 +76,7 @@ file_put_contents('companies.zip', $stream->getContents());
 ## v1 vs v3 API Comparison
 
 | Feature | v1 (BIS) | v3 (YTJ) |
-|---------|----------|----------|
+| --------- | ---------- | ---------- |
 | Base URL | `/bis/v1` | `/opendata-ytj-api/v3` |
 | Lookup | By Business ID only | Search by name, location, form, etc. |
 | Company form | String code | Structured with descriptions |
