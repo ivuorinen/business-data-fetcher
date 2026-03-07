@@ -105,8 +105,8 @@ composer test          # Pest test suite
 
 ## Data Source
 
-- v1: https://avoindata.prh.fi/ytj_en.html
-- v3: https://avoindata.prh.fi/fi/ytj/swagger-ui
+- v1: <https://avoindata.prh.fi/ytj_en.html>
+- v3: <https://avoindata.prh.fi/fi/ytj/swagger-ui>
 
 ## Notice of Liability
 
