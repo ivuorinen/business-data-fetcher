@@ -2,6 +2,7 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v3\Dto;
 
+/** Represents a postal or visiting address from the YTJ v3 API. */
 final readonly class Address
 {
     /**

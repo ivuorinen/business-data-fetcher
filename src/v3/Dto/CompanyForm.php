@@ -2,6 +2,7 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v3\Dto;
 
+/** Represents a company's legal form (e.g. Ltd, cooperative) from the YTJ v3 API. */
 final readonly class CompanyForm
 {
     /**

@@ -2,6 +2,7 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v3\Dto;
 
+/** Top-level DTO for a company record from the YTJ v3 API. */
 final readonly class Company
 {
     /**

@@ -2,6 +2,7 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v3\Dto;
 
+/** Paginated search result containing matched companies from the YTJ v3 API. */
 final readonly class CompanySearchResult
 {
     /**

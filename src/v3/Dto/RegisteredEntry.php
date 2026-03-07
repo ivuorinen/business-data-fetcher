@@ -2,6 +2,7 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v3\Dto;
 
+/** Represents a registration entry in a public register from the YTJ v3 API. */
 final readonly class RegisteredEntry
 {
     /**

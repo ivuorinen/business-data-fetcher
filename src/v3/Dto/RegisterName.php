@@ -2,6 +2,7 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v3\Dto;
 
+/** Represents a company name registered in a specific register. */
 final readonly class RegisterName
 {
     public function __construct(

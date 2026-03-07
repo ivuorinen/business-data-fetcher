@@ -2,6 +2,7 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v3\Dto;
 
+/** Represents a company's line of business (industry classification) from the YTJ v3 API. */
 final readonly class BusinessLine
 {
     /**

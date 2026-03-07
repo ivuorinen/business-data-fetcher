@@ -2,6 +2,7 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v3\Dto;
 
+/** Represents a company's registered website URL. */
 final readonly class Website
 {
     public function __construct(
