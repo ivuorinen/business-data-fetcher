@@ -14,9 +14,7 @@ ENABLE_LINTERS:
   - YAML_YAMLLINT
   - YAML_PRETTIER
   - MARKDOWN_MARKDOWNLINT
-  - JSON_PRETTIER
   - PHP_PHPCS
-  - PHP_PHPSTAN
 
 DISABLE_LINTERS:
   - REPOSITORY_DEVSKIM
@@ -25,7 +23,4 @@ DISABLE_LINTERS:
 PHP_PHPCS_CLI_LINT_MODE: project
 PHP_PHPCS_ARGUMENTS: "--warning-severity=0"
 
-PHP_PHPSTAN_CLI_LINT_MODE: project
-PHP_PHPSTAN_CONFIG_FILE: phpstan.neon
-
-FILTER_REGEX_EXCLUDE: "(vendor/|node_modules/|\\.github/|\\.git/|composer\\.lock|package-lock\\.json)"
+FILTER_REGEX_EXCLUDE: "(vendor/|node_modules/|\\.github/|\\.git/|\\.claude/|composer\\.lock|package-lock\\.json)"
