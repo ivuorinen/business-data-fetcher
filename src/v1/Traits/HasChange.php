@@ -2,8 +2,10 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Provides a human-readable description of a business ID change reason. */
 trait HasChange
 {
+    /** Get the change reason description (e.g. "Fusion", "Division"). */
     public function getChangeString(): string
     {
         return match ($this->change) {

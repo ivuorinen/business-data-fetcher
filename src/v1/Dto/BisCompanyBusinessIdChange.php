@@ -4,6 +4,7 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Represents a business ID change event (e.g. fusion, division). */
 final readonly class BisCompanyBusinessIdChange
 {
     use Traits\HasSource;

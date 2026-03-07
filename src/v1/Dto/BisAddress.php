@@ -4,6 +4,7 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Represents a postal or visiting address from the BIS v1 API. */
 final readonly class BisAddress
 {
     use Traits\HasSource;

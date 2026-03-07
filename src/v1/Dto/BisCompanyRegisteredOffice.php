@@ -4,6 +4,7 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Represents a company's registered office (domicile). */
 final readonly class BisCompanyRegisteredOffice
 {
     use Traits\HasSource;

@@ -4,6 +4,7 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Represents a company liquidation or bankruptcy entry. */
 final readonly class BisCompanyLiquidation
 {
     use Traits\HasSource;

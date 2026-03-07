@@ -4,6 +4,7 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Represents a company's line of business (industry classification). */
 final readonly class BisCompanyBusinessLine
 {
     use Traits\HasSource;

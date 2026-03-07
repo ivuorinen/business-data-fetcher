@@ -4,6 +4,7 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Represents a company name or auxiliary name entry. */
 final readonly class BisCompanyName
 {
     use Traits\HasSource;

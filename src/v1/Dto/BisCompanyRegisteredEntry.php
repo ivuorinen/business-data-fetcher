@@ -4,6 +4,7 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Represents a registration entry in a public register. */
 final readonly class BisCompanyRegisteredEntry
 {
     use Traits\HasAuthority;

@@ -2,8 +2,10 @@
 
 namespace Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Provides a human-readable register name from the register code. */
 trait HasRegister
 {
+    /** Get the register name (e.g. "Trade Register", "VAT Register"). */
     public function getRegisterString(): string
     {
         return match ($this->register) {

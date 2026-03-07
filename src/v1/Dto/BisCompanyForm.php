@@ -4,6 +4,7 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Represents a company's legal form (e.g. Ltd, cooperative). */
 final readonly class BisCompanyForm
 {
     use Traits\HasSource;

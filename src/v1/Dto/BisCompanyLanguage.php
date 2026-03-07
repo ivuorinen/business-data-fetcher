@@ -4,6 +4,7 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Represents a company's registered language. */
 final readonly class BisCompanyLanguage
 {
     use Traits\HasSource;

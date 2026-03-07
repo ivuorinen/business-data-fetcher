@@ -4,6 +4,7 @@ namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 use Ivuorinen\BusinessDataFetcher\v1\Traits;
 
+/** Represents a company contact detail (phone, email, website, etc.). */
 final readonly class BisCompanyContactDetail
 {
     use Traits\HasSource;
