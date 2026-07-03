@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ivuorinen\BusinessDataFetcher\v1\Traits;
 
 /** Provides a human-readable language name from a language code. */
