@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ivuorinen\BusinessDataFetcher\v1\Traits;
 
 /** Provides a human-readable data source name from the source code. */

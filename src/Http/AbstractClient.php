@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ivuorinen\BusinessDataFetcher\Http;
 
 use CuyZ\Valinor\Mapper\TreeMapper;

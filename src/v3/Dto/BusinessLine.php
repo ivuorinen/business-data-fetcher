@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ivuorinen\BusinessDataFetcher\v3\Dto;
 
 /** Represents a company's line of business (industry classification) from the YTJ v3 API. */

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ivuorinen\BusinessDataFetcher\v3\Exceptions;
 
 use Exception;

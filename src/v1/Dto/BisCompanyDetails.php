@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ivuorinen\BusinessDataFetcher\v1\Dto;
 
 /** Top-level DTO for a company record from the BIS v1 API. */

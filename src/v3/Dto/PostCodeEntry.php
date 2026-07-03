@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ivuorinen\BusinessDataFetcher\v3\Dto;
 
 /** Represents a Finnish postal code with associated city and municipality. */
