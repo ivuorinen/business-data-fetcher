@@ -46,6 +46,9 @@
         "test": "php vendor/bin/pest"
     },
     "config": {
+        "platform": {
+            "php": "8.2.29"
+        },
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "captainhook/hook-installer": true,
